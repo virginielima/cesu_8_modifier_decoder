@@ -39,3 +39,10 @@ If you need to recover text from potentially corrupt data, clean it first.
   U+0080 or a 3-byte form encoding a value below U+0800 raises `Cesu8DecodeError`.
 - `Cesu8DecodeError` subclasses `ValueError`, so existing `except ValueError`
   blocks still catch it.
+
+## Design notes
+
+The window stores values eagerly rather than keeping running aggregates. Running
+sums drift with floating point over long streams, and recomputing from a small
+buffer is cheap enough that the drift is not worth the speed.
+
