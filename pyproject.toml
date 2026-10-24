@@ -1,6 +1,6 @@
 [project]
 name = "cesu-8-modifier-decoder"
-version = "0.1.1"
+version = "0.1.2"
 description = "Decodes CESU-8 encoded byte sequences, handling surrogate pair representation of supplementary characters, into Python strings."
 requires-python = ">=3.10"
 dependencies = []
